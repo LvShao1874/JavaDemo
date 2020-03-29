@@ -1,11 +1,15 @@
 package com.proxy;
 
-public class A implements TimeRecord {
+public class A implements Action {
 
     @Override
-    public void doSomething1() throws InterruptedException {
+    public void doSomething1() {
         System.out.println("执行方法1开始");
-        Thread.sleep(3000);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("执行方法1结束");
     }
 
